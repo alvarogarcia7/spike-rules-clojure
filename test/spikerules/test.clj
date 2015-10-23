@@ -18,6 +18,8 @@
       ((:not-empty rules-repository) "") => false
       ((:empty rules-repository) "") => true
       ((:empty rules-repository) "1") => false
+      ((:single-space rules-repository) "") => false
+
       )
 
 (fact "check rules' validity"
