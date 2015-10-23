@@ -36,7 +36,7 @@
 (fact "check rules' validity"
       (is-valid? {:url {:value "a"}}) => true
       (is-valid? {:url {:value "a" :is [:not-empty]}}) => true
-      (is-valid? {:url {:value "" :is [:not-empty]}}) => false
+      (is-valid? {:url {:value ""  :is [:not-empty]}}) => false
       (is-valid? {:url {:value "a" :is [:empty]}}) => false
       (is-valid? {:url {:value " " :is [:not-empty :single-space]}}) => true
       (is-valid? {:url {:value "2" :is [:number :single-space]}}) => false
