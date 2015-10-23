@@ -15,10 +15,14 @@
 
 (defn is-valid? [rules]
   (let [current-rule (:url rules)
-        rules2 (:is current-rule)]
+        rules2 (:is current-rule)
+        current-value (:value current-rule)]
     (cond
       (empty? rules2) true
-      :else (((first rules2) rules-repository) (:value current-rule)))))
+      :else
+      (not-any? #(false? %)
+                      (map #((% rules-repository) current-value) rules2)))))
+
 
 (fact "check rules' composition"
       ((:not-empty rules-repository) "2") => true

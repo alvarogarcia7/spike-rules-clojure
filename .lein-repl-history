@@ -17,3 +17,8 @@ ls
 (string->integer "21")
 (string->integer "aa")
 g s
+(and true nil)
+(not-any? #(nil? %) [])
+(not-any? #(nil? %) [a])
+(not-any? #(nil? %) [:a])
+(not-any? #(nil? %) [nil])
