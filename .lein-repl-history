@@ -1,2 +1,6 @@
 (use 'midje.repl)
  (autotest)
+ls
+(partial = 0)
+((partial = 0) 1)
+((partial = 0) 0)

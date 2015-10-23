@@ -4,6 +4,7 @@
 (def rules-repository
   {:not-empty (comp not empty?)
    :empty     empty?
+   :single-space (partial = " ")
    })
 
 (defn is-valid? [rules]
