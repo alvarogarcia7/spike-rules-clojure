@@ -10,7 +10,7 @@
   {:not-empty (comp not empty?)
    :empty     empty?
    :single-space (partial = " ")
-   :number       (fn [number] (not (nil? (string->integer number))))}
+   :number       (comp not nil? string->integer)}
   )
 
 (defn is-valid? [rules]
