@@ -1,0 +1,8 @@
+(def rules [])
+(def rules {:url {:value "http://example.com"})
+(def rules {:url {:value "http://example.com"}}
+(
+))
+(def rules {:url {:value "http://example.com"}})
+rules
+(:url rules)
