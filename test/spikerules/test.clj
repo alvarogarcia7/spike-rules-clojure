@@ -14,7 +14,9 @@
       :else (((first rules2) rules-repository) (:value current-rule)))))
 
 (fact "check rules' composition"
-      ((:not-empty rules-repository) "2") => true)
+      ((:not-empty rules-repository) "2") => true
+      ((:not-empty rules-repository) "") => false
+      )
 
 (fact "check rules' validity"
       (is-valid? {:url {:value "a"}}) => true
