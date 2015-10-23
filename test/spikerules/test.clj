@@ -7,8 +7,8 @@
 
 
 (def rules-repository
-  {:not-empty (comp not empty?)
-   :empty     empty?
+  {:not-empty    (comp not empty?)
+   :empty        empty?
    :single-space (partial = " ")
    :number       (comp not nil? string->integer)}
   )
