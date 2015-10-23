@@ -3,7 +3,7 @@
 
 (def rules-repository
   {:not-empty (comp not empty?)
-   :empty empty?
+   :empty     empty?
    })
 
 (defn is-valid? [rules]
@@ -12,6 +12,9 @@
     (cond
       (empty? rules2) true
       :else (((first rules2) rules-repository) (:value current-rule)))))
+
+(fact "check rules' composition"
+      ((:not-empty rules-repository) "2") => true)
 
 (fact "check rules' validity"
       (is-valid? {:url {:value "a"}}) => true
