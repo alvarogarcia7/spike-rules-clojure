@@ -16,6 +16,7 @@
 (fact "check rules' composition"
       ((:not-empty rules-repository) "2") => true
       ((:not-empty rules-repository) "") => false
+      ((:empty rules-repository) "") => true
       )
 
 (fact "check rules' validity"
