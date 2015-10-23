@@ -6,3 +6,20 @@
 (def rules {:url {:value "http://example.com"}})
 rules
 (:url rules)
+g s
+(generate-lein-project-file!)
+(size "")
+(length "")
+(lenght "")
+(count "")
+(count "1")
+(count 1)
+(empty? ""(
+)
+(empty? "")
+(empty? "1")
+(empty? "a")
+(empty? "")
+(use 'midje.repl)
+.pwd
+(use 'midje.repl)
