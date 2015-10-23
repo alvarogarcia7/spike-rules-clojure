@@ -2,9 +2,8 @@
   (:use midje.sweet))
 
 (def rules-repository
-  {
-   :not-empty (fn [value] (not (empty? value)))
-   :empty (fn [value] (empty? value))
+  {:not-empty (comp not empty?)
+   :empty empty?
    })
 
 (defn is-valid? [rules]
