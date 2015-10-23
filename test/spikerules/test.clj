@@ -17,6 +17,7 @@
       ((:not-empty rules-repository) "2") => true
       ((:not-empty rules-repository) "") => false
       ((:empty rules-repository) "") => true
+      ((:empty rules-repository) "1") => false
       )
 
 (fact "check rules' validity"
