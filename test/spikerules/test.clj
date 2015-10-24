@@ -13,6 +13,9 @@
    :number       (comp not nil? string->integer)}
   )
 
+(defn- all-true? [coll]
+  (not-any? #(false? %) coll))
+
 (defn- validate-single-rule [rule]
   (let [current-rule rule
         rules2 (:is current-rule)
@@ -20,7 +23,7 @@
     (cond
       (empty? rules2) true
       :else
-      (not-any? #(false? %)
+        (all-true?
                 (map #((% rules-repository) current-value) rules2)))))
 
 (defn is-valid? [rules]
