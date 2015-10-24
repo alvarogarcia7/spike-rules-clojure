@@ -13,15 +13,18 @@
    :number       (comp not nil? string->integer)}
   )
 
-(defn is-valid? [rules]
-  (let [current-rule (:url rules)
+(defn- validate-single-rule [rule]
+  (let [current-rule rule
         rules2 (:is current-rule)
         current-value (:value current-rule)]
     (cond
       (empty? rules2) true
       :else
       (not-any? #(false? %)
-                      (map #((% rules-repository) current-value) rules2)))))
+                (map #((% rules-repository) current-value) rules2)))))
+
+(defn is-valid? [rules]
+  (not-any? #(false? %) (map #(validate-single-rule (second %)) (seq rules))))
 
 
 (fact "check rules' composition"
