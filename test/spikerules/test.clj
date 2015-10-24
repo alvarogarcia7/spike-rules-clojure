@@ -27,7 +27,7 @@
                 (map #((% rules-repository) current-value) rules2)))))
 
 (defn is-valid? [rules]
-  (not-any? #(false? %) (map #(validate-single-rule (second %)) (seq rules))))
+  (all-true? (map #(validate-single-rule (second %)) (seq rules))))
 
 
 (fact "check rules' composition"
