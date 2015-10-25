@@ -23,3 +23,5 @@ g s
 (use 'midje.repl)
 .pwd
 (use 'midje.repl)
+(generate-lein-project-file!)
+(use 'midje.repl)
