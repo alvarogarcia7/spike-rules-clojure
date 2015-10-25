@@ -1,5 +1,6 @@
 (ns spikerules.test
-  (:use midje.sweet))
+  (:use midje.sweet)
+  (:use [spikerules.rules :refer :all]))
 
 (fact "check rules' composition"
       ((:not-empty rules-repository) "2") => true
